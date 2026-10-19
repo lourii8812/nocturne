@@ -1,0 +1,19 @@
+{
+  "name": "NOCTURNE \u2014 Your Personal Universe",
+  "short_name": "NOCTURNE",
+  "description": "A private, local-first personal dashboard for your tasks, time, habits, goals, and thoughts.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090a16",
+  "theme_color": "#0b0b1b",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

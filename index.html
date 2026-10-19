@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b1b">
+  <meta name="description" content="NOCTURNE — your personal digital universe.">
+  <title>NOCTURNE · Your personal universe</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-view="overview" aria-label="NOCTURNE home">
+        <span class="brand-mark">☾</span><span><b>NOCTURNE</b><small>YOUR PERSONAL UNIVERSE</small></span>
+      </a>
+      <button class="workspace-switch" id="workspaceBtn"><span class="workspace-dot"></span><span>Personal workspace</span><span class="chevron">⌄</span></button>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview"><span>◈</span> Analytics</button>
+        <button class="nav-item" data-view="tasks"><span>☑</span> Tasks <em id="navTaskCount">0</em></button>
+        <button class="nav-item" data-view="calendar"><span>▦</span> Calendar</button>
+        <button class="nav-item" data-view="focus"><span>◷</span> Focus</button>
+        <button class="nav-item" data-view="goals"><span>◎</span> Goals</button>
+        <button class="nav-item" data-view="habits"><span>↻</span> Habits</button>
+        <button class="nav-item" data-view="journal"><span>▤</span> Journal & Notes</button>
+        <button class="nav-item" data-view="insights"><span>⌁</span> Insights</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-quote"><span class="quote-star">✦</span><p id="sidebarQuote">Small steps still move you forward.</p><small>YOUR DAILY REMINDER</small></div>
+      <button class="nav-item settings-link" data-view="settings"><span>⚙</span> Settings & backups</button>
+      <div class="profile-mini"><div class="avatar" id="avatarInitials">L</div><div class="profile-copy"><b id="profileName">Lour</b><small>Personal space</small></div><button class="icon-button" id="profileSettings" title="Profile settings">···</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="breadcrumbs"><span>NOCTURNE</span><i>/</i><b id="crumb">Overview</b></div>
+        <div class="top-actions">
+          <button class="search-trigger" id="searchOpen"><span>⌕</span><span>Search anything...</span><kbd>Ctrl K</kbd></button>
+          <button class="icon-button" id="themeQuick" title="Cycle accent color">✧</button>
+          <button class="primary-button small" id="quickAdd"><span>＋</span> Create new</button>
+        </div>
+      </header>
+      <section class="view-container" id="viewContainer" tabindex="-1"></section>
+      <footer class="app-footer"><span>☾ Made for your own little universe.</span><span id="saveStatus">Saved locally</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <header class="modal-header"><div><p class="eyebrow" id="modalEyebrow">CREATE</p><h2 id="modalTitle">New item</h2></div><button class="icon-button" id="modalClose" aria-label="Close">×</button></header>
+      <form id="itemForm"><div id="modalFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="secondary-button" id="modalCancel">Cancel</button><button class="primary-button" type="submit" id="modalSubmit">Save item</button></div></form>
+    </section>
+  </div>
+
+  <div class="search-backdrop hidden" id="searchBackdrop">
+    <section class="search-modal" role="dialog" aria-modal="true" aria-label="Search NOCTURNE">
+      <div class="search-input-row"><span>⌕</span><input id="globalSearch" placeholder="Search tasks, notes, goals, habits..." autocomplete="off"><kbd>ESC</kbd></div>
+      <div class="search-results" id="searchResults"><p class="search-hint">Type to search across your personal universe.</p></div>
+      <div class="search-bottom"><span>↑↓ Navigate</span><span>↵ Open result</span><span>ESC Close</span></div>
+    </section>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
